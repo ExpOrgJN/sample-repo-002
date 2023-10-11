@@ -12,7 +12,5 @@ jobs:
         run: echo '${{ toJSON(github.event) }}' | jq
         shell: bash
       - name: Create comment
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          run: echo '${{ issue-number }}'
-          shell: bash
+        run: echo '${{ github.event.issue.number }}'
+        shell: bash

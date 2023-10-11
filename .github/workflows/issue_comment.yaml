@@ -4,7 +4,7 @@ on:
   issues:
     types: [opened]
 
-#permissions: write-all
+permissions: write-all
 
 jobs:
   comment-with-action:
@@ -36,7 +36,7 @@ jobs:
       - name: Create Comment on issues with APIs
         run: |
           gh api -X POST \
-            http://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
             -f body='
             Comment but from the API call and not the action
             '

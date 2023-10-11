@@ -37,10 +37,12 @@ jobs:
     steps:
       - name: Create Comment on issues with APIs
         run: |
-          gh api -X POST \
-            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
-            -f body='Comment but from the API call and not the action'
+          #gh api -X POST \
+            #https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            #-f body='Comment but from the API call and not the action'
+          gh api -X GET /repos/${ORGANIZATION}/${REPOSITORY}/topics --jq='.names'
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZTION: ${{ github.event.repository.owner.login }}
           REPOSITORY: ${{ github.event.repository.name }}

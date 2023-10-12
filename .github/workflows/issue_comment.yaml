@@ -13,13 +13,12 @@ jobs:
       issues: write
       
     steps:
-      - name: dump github context
-        run: echo '${{ toJSON(github.event) }}' | jq
-        shell: bash
+      #- name: dump github context
+        #run: echo '${{ toJSON(github.event) }}' | jq
+        #shell: bash
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v3
         with:
-          #token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.issue.number }}
           body: |
             This is a multi-line test comment

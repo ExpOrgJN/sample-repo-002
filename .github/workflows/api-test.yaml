@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Create Comment on issues with APIs
         run: |
-          gh api -X GET /orgs/${ORGANIZATION}/members
+          gh api -X GET orgs/${ORGANIZATION}/members
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

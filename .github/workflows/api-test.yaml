@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Create Comment on issues with APIs
         run: |
-          gh api -X GET https://api.github.com/repos/ExpOrgJN/sample-repo-002/topics --jq='.names'
+          gh api -X GET https://api.github.com/repos/ExpOrgJN/sample-repo-002/issues
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

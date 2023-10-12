@@ -16,5 +16,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ORGANIZTION: ${{ github.repository_owner }}
+          ORGANIZATION: ${{ github.repository_owner }}
           REPOSITORY: ${{ github.event.repository.name }}
